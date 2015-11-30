@@ -1,313 +1,304 @@
+
+<!-- 
+User documentation should explain the core concepts and metaphors of the application and discuss how to use each feature in a step-by-step manner. User documentation can be delivered as a user manual, a menu-driven help system for a desktop GUI application, as a Unix man mage, or as a collection of help pages on a web site.
+-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
-	<title>Taufiq Dhanani</title>
-
-    <!-- Yay! Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    <!-- favicon -->
-    <link rel="icon" href="TD.png" type="image/gif" sizes="16x16">
-
-    <!-- import bootstrap (flatly theme) css and style.css-->
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>T2 Mobile App</title>
+    <link href="stylesheets/font-awesome.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
-<body id="page-top">
-    <!-- NAVIGATOR -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+<body>
+
+<div id="panel1" class="panelSection">
+  <img src="images/t2logo.png" class="center" width="300"> 
+  <div class="container">
+    <div class="col-xs-12">   
+    <h1 class="light">T2 Mobile App</h1>
+    <hr size="2">
+    <h2 class="subtitle">T-Square without the fuss</h2>
+    <a class="btn custom-btn-sq" onClick="scrollTo('#panel2')">
+      Learn More
+    </a>
+    </div>
+  </div>
+</div>
+
+
+<div id="panel2" class="panelSection">
+  <div class="container">
+    <div class="col-xs-6">
+      <img src="images/androidAppSample.png" class="center" width="300">
+    </div>    
+    <div class="col-xs-6">    
+    <h1 class="">The App</h1>
+    <p>This android application allows you to log in to T-Square natively through an application. This means that all of your assignments, grades, and annoucements are only a tap away!</p>
+    </div>
+  </div>
+</div>
+
+<div id="panel3" class="panelSection">
+  <div class="container">
+    <h1 class="light">The features</h1>
+    <div class="col-sm-4 about-item">
+        <a href="#modal1" class="about-link" data-toggle="modal">
+          <div class="image">
+            <img src="images/appthumbnail1.png" class="img-responsive img-circle">
+            <h2 class="overlay"><span>EASY<br/> login</span></h2>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-sm-4 about-item">
+        <a href="#modal2" class="about-link" data-toggle="modal">
+          <div class="image">
+            <img src="images/appthumbnail2.png" class="img-responsive img-circle">
+            <h2 class="overlay"><span>VIEW<br/> classes</span></h2>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-sm-4 about-item">
+        <a href="#modal3" class="about-link" data-toggle="modal">
+          <div class="image">
+            <img src="images/appthumbnail3.png" class="img-responsive img-circle">
+            <h2 class="overlay"><span>STAY <br/> up to date</span></h2>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-sm-4 about-item">
+        <a href="#modal4" class="about-link" data-toggle="modal">
+          <div class="image">
+            <img src="images/appthumbnail4.png" class="img-responsive img-circle">
+            <h2 class="overlay"><span>Top notch<br/> SECURITY</span></h2>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-sm-4 about-item">
+        <a href="#modal5" class="about-link" data-toggle="modal">
+          <div class="image">
+            <img src="images/appthumbnail5.png" class="img-responsive img-circle">
+            <h2 class="overlay"><span>Top notch<br/> SECURITY</span></h2>
+          </div>
+        </a>
+    </div>
+
+    <div class="col-sm-4 about-item">
+        <a href="#modal6" class="about-link" data-toggle="modal">
+          <div class="image">
+            <img src="images/appthumbnail6.png" class="img-responsive img-circle">
+            <h2 class="overlay"><span>Top notch<br/> SECURITY</span></h2>
+          </div>
+        </a>
+    </div>
+
+    <div class="container">
+      <div class="col-xs-12">    
+      <img src="images/googleplay.png" style="padding-top: 50px"class="center" width="200">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="panel4" class="panelSection">
+  <div class="container"> 
+    <div class="col-xs-12">    
+    <h1 class="">The Team</h1>
+    </div>
+    <div class="row">
+
+
+      <div class="col-xs-3">
+        <div class="thumbnail">
+          <img src="images/kevin.jpg">
+          <div class="caption">
+            <h3>Kevin Xu</h3>
+            <p>Senior at Georgia Tech that SAY STUFF ABOUT WHAT HE DID FOR THE PROJECT</p>
+          </div>
+        </div>
+      </div>      
+
+      <div class="col-xs-3">
+        <div class="thumbnail">
+          <img src="images/tyler.jpg">
+          <div class="caption">
+            <h3>Tyler Bell</h3>
+            <p>Senior at Georgia Tech that SAY STUFF ABOUT WHAT HE DID FOR THE PROJECT</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-3">
+        <div class="thumbnail">
+          <img src="images/luca.jpg">
+          <div class="caption">
+            <h3>Luca Farsi</h3>
+            <p>Senior at Georgia Tech that SAY STUFF ABOUT WHAT HE DID FOR THE PROJECT</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-3">
+        <div class="thumbnail">
+          <img src="images/taufiq.jpg">
+          <div class="caption">
+            <h3>Taufiq Dhanani</h3>
+            <p>Senior at Georgia Tech that SAY STUFF ABOUT WHAT HE DID FOR THE PROJECT</p>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+<div id="panel5" class="panelSection">
+
+</div>
+
+
+
+<footer class="navbar-bottom">
+  <p>Copyright &copy; 2015 Senior Design 2015 All rights reserved.</p>
+</footer>
+
+
+
+
+
+<div class="about-modal modal fade" id="modal1" tabindex="-1" role="dialog">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr"><div class="rl"></div></div>
+        </div>
+      <div class="container">
+        <div class="col-xs-6">    
+          <h1 class="">Title of Modal</h1>
+          <p>Quick description of this modal!</p>
+        </div>
+        <div class="col-xs-6">
+          <img src="images/app1.png" class="center" width="300">
+        </div>    
+      </div>
+    </div> 
+</div> 
+
+<div class="about-modal modal fade" id="modal2" tabindex="-1" role="dialog">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr"><div class="rl"></div></div>
+        </div>
         <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> 
-                </button>
-            </div> <!-- navbar -->
+          <div class="col-xs-6">    
+            <h1 class="">Title of Modal</h1>
+            <p>Quick description of this modal!</p>
+          </div>
+          <div class="col-xs-6">
+            <img src="images/app2.png" class="center" width="300">
+          </div>    
+        </div>
+    </div> 
+</div> 
 
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="page-scroll"><a href="#resume">Resume</a></li>
-                    <li class="page-scroll"><a href="#about">About Me</a></li>
-                    <li class="page-scroll"><a href="#connect">Connect</a></li>
-                </ul>
-            </div> <!-- collapse navbr -->
-        </div> <!-- container -->
-    </nav>
-
-	<!-- HEADER -->
-	<header>
-		<div class="container">
-			<img class = "img-responsive" src="files/profile.png">
-			<div class="intro-text">
-				<span class="name">Taufiq Dhanani</span>
-				<span class="skills">Georgia Institute of Technology</span>
-			</div> 
-		</div> 
-	</header>
-
-	<!-- 	Resume Section -->
-    <section class="success" id="resume">
+<div class="about-modal modal fade" id="modal3" tabindex="-1" role="dialog">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr"><div class="rl"></div></div>
+        </div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Resume</h2>
-                    <hr class="star-light">
-                </div> <!-- for title -->
-            </div> <!-- row -->
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>My name is Taufiq Dhanani and I expect to complete my Bachelor's Degree at The Georgia Institute of Technology in the May of 2016. I am seeking employment at a company in which I can contribute my experiences in a team environment and build new software solutions in order to increase the company's profitability and also further develop my programming skillsets</p>
-                </div> <!-- first description -->
-                <div class="col-lg-4">
-                    <p>Throughout my preparation for the workforce, I have managed to strive for academic excellence while gaining valuable experience interning at Visa as a Software Engineer and working as a Technology Support Assistant for Georgia Tech OIT. I am confident in my abilities to develop in various programming language and have applied my skills on various projects.</p>
-                </div> <!--second description -->
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="files/resume.pdf" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download Resume
-                    </a>
-                </div> <!-- for button -->
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section> <!-- resume section -->
+          <div class="col-xs-6">    
+            <h1 class="">Title of Modal</h1>
+            <p>Quick description of this modal!</p>
+          </div>
+          <div class="col-xs-6">
+            <img src="images/app3.png" class="center" width="300">
+          </div>    
+        </div>
+    </div> 
+</div> 
 
-    <!-- ABOUT ME -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About Me</h2>
-                    <hr class="star-light">
-                </div> <!-- aboutTitle -->
-            </div> <!-- aboutTitleRow -->
-            <div class="row">
-                <div class="col-sm-4 about-item">
-                    <a href="#aboutModal1" class="about-link" data-toggle="modal">
-                        <img src="files/education.png" class="img-responsive" alt="">
-                    </a>
-                </div> <!-- educationPic -->
-                <div class="col-sm-4 about-item">
-                    <a href="#aboutModal2" class="about-link" data-toggle="modal">
-                        <img src="files/experience.png" class="img-responsive" alt="">
-                    </a>
-                </div> <!-- experiencePic -->
-                <div class="col-sm-4 about-item">
-                    <a href="#aboutModal3" class="about-link" data-toggle="modal">
-                        <img src="files/skills.png" class="img-responsive" alt="">
-                    </a>
-                </div> <!-- skillsPic -->
-                <div class="col-sm-4 about-item">
-                    <a href="#aboutModal4" class="about-link" data-toggle="modal">
-                        <img src="files/activities.png" class="img-responsive" alt="">
-                    </a>
-                </div> <!-- activitiesPic -->
-                <div class="col-sm-4 about-item">
-                    <a href="#aboutModal5" class="about-link" data-toggle="modal">
-                        <img src="files/projects.png" class="img-responsive" alt="">
-                    </a>
-                </div> <!-- projectsPic -->
-                <div class="col-sm-4 about-item">
-                    <a href="#aboutModal6" class="about-link" data-toggle="modal">
-                        <img src="files/interests.png" class="img-responsive" alt="">
-                    </a>
-                </div> <!-- interestsPic -->
-            </div> <!-- aboutRow -->
-        </div> <!-- aboutContainer -->
-    </section> <!-- about section -->
+<div class="about-modal modal fade" id="modal4" tabindex="-1" role="dialog">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr"><div class="rl"></div></div>
+        </div>
+      <div class="container">
+        <div class="col-xs-6">    
+          <h1 class="">Title of Modal</h1>
+          <p>Quick description of this modal!</p>
+        </div>
+        <div class="col-xs-6">
+          <img src="images/app4.png" class="center" width="300">
+        </div>    
+      </div>
+    </div> 
+</div> 
 
-    <!-- CONNECTIONS SECTION -->
-    <section id="connect">
-    	<div class="container">
-    		<div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Connections</h2>
-                    <hr class="star-light">
-                </div> <!-- gridConnectionsTitle -->
-            </div> <!-- connectionsTitle -->
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <ul class="list-inline text-center visible-md visible-lg">
-                        <li><a href="https://www.flickr.com/photos/124544145@N04/sets/" class="btn-social btn-outline"><i class="fa fa-fw fa-flickr"></i></a></li>
-                        <li><a href="https://www.facebook.com/taufiq.dhanani" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a></li>
-                        <li><a href="https://www.linkedin.com/pub/taufiq-dhanani/76/213/955" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a></li>
-                        <!-- 	<li><a href="https://plus.google.com/103832768788192237230/posts" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a></li> -->
-                    </ul>
-                    <ul class="list-inline text-center visible-xs visible-sm">
-                        <li><a href="https://www.flickr.com/photos/124544145@N04/sets/" class="btn-social-small btn-outline"><i class="fa fa-fw fa-flickr"></i></a></li>
-                        <li><a href="https://www.facebook.com/taufiq.dhanani" class="btn-social-small btn-outline"><i class="fa fa-fw fa-facebook"></i></a></li>
-                        <li><a href="https://www.linkedin.com/pub/taufiq-dhanani/76/213/955" class="btn-social-small btn-outline"><i class="fa fa-fw fa-linkedin"></i></a></li>
-                    </ul>
-                </div> <!-- gridSmallRow -->
-            </div> <!-- connectionsRow -->
-        </div> <!-- container -->
-    </section> <!-- connections -->
+<div class="about-modal modal fade" id="modal5" tabindex="-1" role="dialog">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr"><div class="rl"></div></div>
+        </div>
+      <div class="container">
+        <div class="col-xs-6">    
+          <h1 class="">Title of Modal</h1>
+          <p>Quick description of this modal!</p>
+        </div>
+        <div class="col-xs-6">
+          <img src="images/app5.png" class="center" width="300">
+        </div>    
+      </div>
+    </div> 
+</div> 
 
-    <!-- MODALS -->
-    <div class="about-modal modal fade" id="aboutModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <img src="files/education.png" class="img-responsive img-centered" alt="">
-                            <p>I am a student at Georgia Institute of Technology</p>
-                            <button type="button" class="btn btn-modal btn-large" data-dismiss="modal">
-                                <i class="fa fa-times"></i> Close
-                            </button>
-                        </div> <!-- education body -->
-                    </div> <!-- grid education -->
-                </div> <!-- row education -->
-            </div> <!-- container education -->
-        </div> <!-- modal content education -->
-    </div> <!-- education modal -->
-    <div class="about-modal modal fade" id="aboutModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <img src="files/experience.png" class="img-responsive img-centered" alt="">
-                            <p>Insert Experiences Here</p>
-                            <button type="button" class="btn btn-modal btn-large" data-dismiss="modal">
-                                <i class="fa fa-times"></i> Close
-                            </button>
-                        </div> <!-- experiences body -->
-                    </div> <!-- grid experiences -->
-                </div> <!-- row experiences -->
-            </div> <!-- container experiences -->
-        </div> <!-- modal content experiences -->
-    </div> <!-- experiences modal -->
-    <div class="about-modal modal fade" id="aboutModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr"><div class="rl"></div></div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <img src="files/skills.png" class="img-responsive img-centered" alt="Skills Bubble">
-                            <p>Java, Python, C, Ruby, HTML, CSS, C#, Visual Basic, RobotC, SQL, AJAX</p>
-                            <button type="button" class="btn btn-modal btn-large" data-dismiss="modal">
-                                <i class="fa fa-times"></i> Close
-                            </button>
-                        </div> <!-- Skills body -->
-                    </div> <!-- grid Skills -->
-                </div> <!-- row Skills -->
-            </div> <!-- container Skills -->
-        </div> <!-- modal content Skills -->
-    </div> <!-- Skills modal -->
-    <div class="about-modal modal fade" id="aboutModal4" tabindex="-1" role="dialog" aria-hidden="true">
-    	<div class="modal-content">
-    		<div class="close-modal" data-dismiss="modal">
-    			<div class="lr">
-    				<div class="rl">
-    				</div>
-    			</div>
-    		</div>
-    		<div class="container">
-    			<div class="row">
-    				<div class="col-lg-8 col-lg-offset-2">
-    					<div class="modal-body">
-    						<img src="files/activities.png" class="img-responsive img-centered" alt="">
-    						<p>Sigma Beta Rho has helped me become the man that I am today. I have served many leadership positions such as Vice President of Internal Affairs and Vice President of Operations in order to maintain the internal status of the Fraternity consisting of approximately 30 members. I was also in charge of service conferences that had to be fully planned out and implemented in a timeframe of six months and consisting of more than 300 volunteers.</p>
-    							<button type="button" class="btn btn-modal btn-large" data-dismiss="modal">
-                                    <i class="fa fa-times"></i> Close
-                                </button>
-                        </div> <!-- activities body -->
-                    </div> <!-- grid activities -->
-                </div> <!-- row activities -->
-            </div> <!-- container activities -->
-        </div> <!-- modal content activities -->
-    </div> <!-- activities modal -->
-    <div class="about-modal modal fade" id="aboutModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <img src="files/projects.png" class="img-responsive img-centered" alt="">
-                            <p>My favorites project I have worked on while a student at Georgia Tech was for my Objects and Design Class. A team of four students developed a MULE Simulation game that had multiple player support using Java, XML, and GitHub.  </p>
-                            <button type="button" class="btn btn-modal btn-large" data-dismiss="modal">
-                                <i class="fa fa-times"></i> Close
-                            </button>
-                        </div> <!-- projects body -->
-                    </div> <!-- grid projects -->
-                </div> <!-- row projects -->
-            </div> <!-- container projects -->
-        </div> <!-- modal content projects -->
-    </div> <!-- projects modal -->
-    <div class="about-modal modal fade" id="aboutModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <img src="files/interests.png" class="img-responsive img-centered" alt="">
-                            <p>Unfortunately, I am one of those people that seems to have a new hobby almost every week. However, the one hobby that has stuck with me is exploring. I love travling to exciting cities and finding new restaurants to try out. One of my goals in life is to visit all seven continents before I turn thirty!</p>
-                            <button type="button" class="btn btn-modal btn-large" data-dismiss="modal">
-                                <i class="fa fa-times"></i> Close
-                            </button>
-                        </div> <!-- interests body -->
-                    </div> <!-- grid interests -->
-                </div> <!-- row interests -->
-            </div> <!-- container interests -->
-        </div> <!-- modal content interests -->
-    </div> <!-- interests modal -->
+<div class="about-modal modal fade" id="modal6" tabindex="-1" role="dialog">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr"><div class="rl"></div></div>
+        </div>
+      <div class="container">
+        <div class="col-xs-6">    
+          <h1 class="">Title of Modal</h1>
+          <p>Quick description of this modal!</p>
+        </div>
+        <div class="col-xs-6">
+          <img src="images/app6.png" class="center" width="300">
+        </div>    
+      </div>
+    </div> 
+</div> 
 
-	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-	<div class="scroll-top page-scroll visible-xs visble-sm">
-		<a class="btn btn-primary" href="#page-top">
-			<i class="fa fa-chevron-up"></i>
-		</a>
-	</div> <!-- Cute little button -->
 
-    <footer class="text-center">
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        This is Taufiq's personal page. Let him know if you have any question or concerns at dhanani94@gmail.com
-                        </br></br><p class="small"> Copyright &copy; Taufiq Dhanani 2015 </p>
-                    </div> <!-- gridForFooter -->
-                </div> <!-- footerRow -->
-            </div> <!-- container -->
-        </div> <!-- footerbelow -->
-    </footer>
 
-	<!-- JAVASCRIPT and JQUERY -->
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-	<script src="js/classie.js"></script>
-	<script src="js/cbpAnimatedHeader.js"></script>
-	<script src="js/script.js"></script>
-	
-	
+
+
+<script src="javascripts/jquery.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/animatescroll.min.js"></script>
+<script type="text/javascript">
+function scrollTo(target) {
+  $(target).animatescroll({scrollSpeed:200,easing:'easeInOutQuint'});
+}
+</script>
 </body>
 </html>

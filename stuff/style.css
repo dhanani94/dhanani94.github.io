@@ -111,4 +111,11 @@ li > a:hover {
     font-size: 25px;
     font-weight: 100;
   }
+  li > a:hover {
+    /*color: #fff;*/
+    /*background-color: black;*/
+    font-size: 25px;
+    font-weight: 100;
+    letter-spacing: 10px;
+  }
 }

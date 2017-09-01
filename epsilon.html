@@ -1,0 +1,121 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="stuff/jq.min.js"></script>
+	<style type="text/css">
+		body {
+			background-color: black;
+		    margin: 0;
+		}
+		
+		html, body {height: 100%;}
+
+		.flex-container {
+		    height: 100%;
+		    padding: 0;
+		    margin: 0;
+		    display: -webkit-box;
+		    display: -moz-box;
+		    display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+		img {
+		    padding: 5px;
+		    width: 600px;
+		    height: 400px;
+		    margin: 10px;
+		    line-height: 20px;
+		    color: white;
+		    font-weight: bold;
+		    font-size: 2em;
+		    text-align: center;
+		}
+
+		.imgBox {
+			position: absolute;
+			width: 576px;
+			height: 378px;
+		}
+
+		img {
+			position:absolute;
+			-webkit-transition: opacity 1s ease-in-out;
+			-moz-transition: opacity 1s ease-in-out;
+			-o-transition: opacity 1s ease-in-out;
+			transition: opacity 1s ease-in-out;
+			opacity:0;
+			-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+			filter: alpha(opacity=0);
+		}
+
+		img.opaque {
+		  opacity:1;
+		  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		  filter: alpha(opacity=1);
+		}
+
+	</style>
+</head>
+<body>
+		<p class="txt"></p>
+	<div class="flex-container">
+		<a class="imgBox" href="#">
+			<img id="wreck" class='opaque' src="stuff/epsilon/wreck.jpg" />
+			<img id="granada" src="stuff/epsilon/granada.jpg" />
+			<img id="singapore" src="stuff/epsilon/singapore.jpg" />
+			<img id="egypt" src="stuff/epsilon/egypt.jpg" />
+			<img id="manneken" src="stuff/epsilon/manneken.jpg" />
+			<img id="coke" src="stuff/epsilon/coke.jpg" />
+		</a>
+	</div>
+
+	<script type="text/javascript">
+	var h_orig = 48;
+	var w_orig = 72;
+	var imgs = [];
+	imgs.push({"name" : "wreck", "left" : 29.0/w_orig, "right" : 57.0/w_orig, "top" : 23.5/h_orig, "bottom" : 30.0/h_orig});
+	imgs.push({"name" : "granada", "left" : 56.5/w_orig, "right" : 76.0/w_orig, "top" : 25.0/h_orig, "bottom" : 33.0/h_orig});
+	imgs.push({"name" : "granada", "left" : 61.5/w_orig, "right" : 76.0/w_orig, "top" : 12.0/h_orig, "bottom" : 33.0/h_orig});
+	imgs.push({"name" : "singapore", "left" : 43.5/w_orig, "right" : 61.5/w_orig, "top" : 9.0/h_orig, "bottom" : 37.5/h_orig});
+	imgs.push({"name" : "egypt", "left" : 13.0/w_orig, "right" : 26.0/w_orig, "top" : 15.5/h_orig, "bottom" : 35.5/h_orig});
+	imgs.push({"name" : "manneken", "left" : 30.0/w_orig, "right" : 39.0/w_orig, "top" : 6.5/h_orig, "bottom" : 35.0/h_orig});
+	imgs.push({"name" : "coke", "left" : 0.0/w_orig, "right" : 16.0/w_orig, "top" : 0.0/h_orig, "bottom" : 31.5/h_orig});
+
+	var imgBox = $( ".imgBox" );
+	var imgWidth = imgBox.width();
+	var imgHeight = imgBox.height();
+
+
+	imgBox.click(function(e) {
+	    var posX = $(this).offset().left, posY = $(this).offset().top;
+	    var x = (e.pageX - posX)/imgWidth;
+	    var y = (e.pageY - posY)/imgWidth;
+	    console.log(x*w_orig);
+	    console.log(y*h_orig);
+	    update_image(x,y);
+	});
+	function update_image(x, y){
+		var targetImg = "#" + imgs[0].name;
+		for (var i = imgs.length - 1; i >= 0; i--) {
+		    if (y > imgs[i].top && y < imgs[i].bottom && x > imgs[i].left && x < imgs[i].right){
+    			console.log(imgs[i].name);
+    			targetImg = "#" + imgs[i].name;
+    		}
+		}
+		$("img").removeClass("opaque"); 
+		$(targetImg).addClass("opaque");
+	}
+
+	</script>
+
+</body>
+</html>
+
+
+
+<!-- https://stackoverflow.com/questions/3234977/using-jquery-how-to-get-click-coordinates-on-the-target-element -->
+
+<!-- http://css3.bradshawenterprises.com/cfimg/ -->

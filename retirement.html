@@ -75,22 +75,22 @@
     <div class="slider-container" style="position: relative; height:50vh; width:85vw; margin: auto;">
 
         <label for="monthly_savings_input">estimated savings per month</label>
-        <input type="range" min="10" max="10000" value="2000" step="10" id="monthly_savings_input" onchange="update_chart()">
+        <input type="range" min="10" max="10000" value="2000" step="10" id="monthly_savings_input" oninput="update_chart()">
         <p id="monthly_savings_print"></p>
         </br>
 
         <label for="retire_age_input">target retirement age</label>
-        <input type="range" min="1" max="100" value="65" id="retire_age_input" onchange="update_chart()">
+        <input type="range" min="1" max="100" value="65" id="retire_age_input" oninput="update_chart()">
         <p id="retire_age_print"></p>
         </br>
 
         <label for="dying_age_input">expected age to die</label>
-        <input type="range" min="1" max="130" value="100" id="dying_age_input" onchange="update_chart()">
+        <input type="range" min="1" max="130" value="100" id="dying_age_input" oninput="update_chart()">
         <p id="dying_age_print"></p>
         </br>
 
         <label for="est_retirement_spending_input">estimated cost per month after retirement</label>
-        <input type="range" min="1000" max="90000" step="500" value="4000" id="est_retirement_spending_input" onchange="update_chart()">
+        <input type="range" min="1000" max="90000" step="500" value="4000" id="est_retirement_spending_input" oninput="update_chart()">
         <p id="est_retirement_spending_print"></p>
         </br>
 

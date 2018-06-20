@@ -170,3 +170,11 @@ input.preference_input:valid {
       font-weight: 600;
 
 }
+
+
+    
+@media only screen and (max-width: 700px) {
+    #peak_net_worth {
+        visibility: hidden;
+    }
+}

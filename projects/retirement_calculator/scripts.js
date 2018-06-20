@@ -1,8 +1,8 @@
-function calculate_life_worth(age, interest_rate, net_worth, est_retirement_spending, monthly_savings, retire_age, dying_age) {
+function calculate_life_worth(age, interest_rate, net_worth, monthly_retirement_spending, monthly_savings, retire_age, dying_age) {
     var starting_year = (new Date()).getFullYear();
     var current_year = starting_year;
     var yearly_savings = monthly_savings * 12
-    var est_retirement_spending = est_retirement_spending * 12
+    var est_retirement_spending = monthly_retirement_spending * 12
     var ages = [];
     var years = [];
     var worth = [];
@@ -10,7 +10,7 @@ function calculate_life_worth(age, interest_rate, net_worth, est_retirement_spen
     while (age < retire_age) {
         age += 1
         current_year += 1
-        net_worth = net_worth + monthly_savings
+        net_worth = net_worth + yearly_savings
 
         net_worth *= (1 + interest_rate)
 

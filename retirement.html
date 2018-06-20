@@ -32,7 +32,7 @@
     </div>
     <div class="container">
         <div class="slider_group">
-            <label for="monthly_savings_input">estimated savings per month</label>
+            <label for="monthly_savings_input">estimated monthly savings</label>
             <p class="p_slider_value" id="monthly_savings_print">10000</p>
             <input class="input_slider" type="range" min="10" max="10000" value="2000" step="10" id="monthly_savings_input" oninput="update_chart()">
         </div>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="slider_group">
-            <label for="est_retirement_spending_input">estimated cost per month after retirement</label>
+            <label for="est_retirement_spending_input">expected monthly income after retirement</label>
             <p class="p_slider_value" id="est_retirement_spending_print">10000</p>
             <input class="input_slider" type="range" min="1000" max="15000" step="100" value="4000" id="est_retirement_spending_input"
                 oninput="update_chart()">
@@ -60,7 +60,7 @@
     <div id="preferenceModal" class="modal">
         <div class="modal-content">
             <h2>Retirement Calculator</h2>
-            <p class="modal-text">Hi, this is an interactive graphic to visulize your retirement. Change any of the values below to generate the
+            <p class="modal-text">Hi, this is an interactive graphic to visulize your retirement. Change any of the configurations below to generate the
                 retirement curve that you're interested in. You can always change these settings later by clicking on the
                 settings icon on the top right corner of the chart.</p>
 
@@ -71,12 +71,12 @@
                 <input class="preference_input" type="number" value="24" id="age_input" onchange="update_chart()">
 
                 <label for="starting_wealth_input">
-                    <span>current amount saved</span>
+                    <span>current savings ammount</span>
                 </label>
                 <input class="preference_input" type="number" value="100000" id="starting_wealth_input" onchange="update_chart()">
 
                 <label for="est_interest_rate_input">
-                    <span>estimated yearly interest</span>
+                    <span>estimated yearly interest on savings</span>
                 </label>
                 <input type="number" value="0.06" class="preference_input" id="est_interest_rate_input" required autocomplete="off" onchange="update_chart()"
                 />

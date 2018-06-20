@@ -111,19 +111,16 @@ input.preference_input {
   border: none;
   width: 40%;
   overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #4CAF50;
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
   box-shadow: none;
+  border-radius: 0px;
 
 }
 
 input.preference_input:focus{
   width: 60%;
-}
-
-input.preference_input:valid {
-  border-color: green;
 }
 
 .modal_save {

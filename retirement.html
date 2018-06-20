@@ -6,257 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Retirement Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="projects/retirement_calculator/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-    <style>
-        /* The Modal (background) */
-
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-        }
-
-        /* Modal Content/Box */
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            /* Could be more or less, depending on screen size */
-        }
-
-        /* The Close Button */
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    <script src="projects/retirement_calculator/scripts.js"></script>
 </head>
 
 <body>
-    <button id="myBtn">Update Preferences</button>
-
-    <div class="chart-container" style="position: relative; height:50vh; width:85vw; margin: auto;">
+    <div class="top_container">
+        <p>peak net worth
+            <span id="net_worth_peak">$100,343,432</span>
+        </p>
+        <div class="top_container_right">
+            <p>
+                <temp id="afterlife_savings_text">afterlife savings</temp>
+                <span id="after_life_worth">$100,343,432</span>
+            </p>
+            <a class="settings_btn">
+                <i class="fa fa-cog"></i>
+            </a>
+        </div>
+    </div>
+    <div class="container">
         <canvas id="myChart"></canvas>
     </div>
-
-    <!-- <input type="number" value="10" id="monthly_savings_input" onchange="update_chart()">
-    <input type="number" value="40" id="retire_age_input" onchange="update_chart()">
-    <input type="number" value="100" id="dying_age_input" onchange="update_chart()">
-    <input type="number" value="100000" id="est_retirement_spending_input" onchange="update_chart()"> -->
-    <div class="slider-container" style="position: relative; height:50vh; width:85vw; margin: auto;">
-
-        <label for="monthly_savings_input">estimated savings per month</label>
-        <input type="range" min="10" max="10000" value="2000" step="10" id="monthly_savings_input" oninput="update_chart()">
-        <p id="monthly_savings_print"></p>
-        </br>
-
-        <label for="retire_age_input">target retirement age</label>
-        <input type="range" min="1" max="100" value="65" id="retire_age_input" oninput="update_chart()">
-        <p id="retire_age_print"></p>
-        </br>
-
-        <label for="dying_age_input">expected age to die</label>
-        <input type="range" min="1" max="130" value="100" id="dying_age_input" oninput="update_chart()">
-        <p id="dying_age_print"></p>
-        </br>
-
-        <label for="est_retirement_spending_input">estimated cost per month after retirement</label>
-        <input type="range" min="1000" max="15000" step="100" value="4000" id="est_retirement_spending_input" oninput="update_chart()">
-        <p id="est_retirement_spending_print"></p>
-        </br>
-
-
-    </div>
-    <!-- Trigger/Open The Modal -->
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-
-            <span class="close">&times;</span>
-            <label for="age_input">starting age: </label>
-            <input type="number" value="24" id="age_input" onchange="update_chart()">
-            </br>
-
-            <label for="est_interest_rate_input">estimated yearly interest:</label>
-            <input type="number" value="0.06" id="est_interest_rate_input" onchange="update_chart()">
-            </br>
-
-            <label for="starting_wealth_input">current amount saved:</label>
-            <input type="number" value="100000" id="starting_wealth_input" onchange="update_chart()">
-            <p id="starting_wealth_print"></p>
-            </br>
+    <div class="container">
+        <div class="slider_group">
+            <label for="monthly_savings_input">estimated savings per month</label>
+            <p class="p_slider_value" id="monthly_savings_print">10000</p>
+            <input class="input_slider" type="range" min="10" max="10000" value="2000" step="10" id="monthly_savings_input" oninput="update_chart()">
         </div>
 
+        <div class="slider_group">
+            <label for="retire_age_input">target retirement age</label>
+            <p class="p_slider_value" id="retire_age_print">10000</p>
+            <input class="input_slider" type="range" min="1" max="100" value="65" id="retire_age_input" oninput="update_chart()">
+        </div>
+
+        <div class="slider_group">
+            <label for="dying_age_input">expected age to die</label>
+            <p class="p_slider_value" id="dying_age_print">10000</p>
+            <input class="input_slider" type="range" min="1" max="130" value="100" id="dying_age_input" oninput="update_chart()">
+        </div>
+
+        <div class="slider_group">
+            <label for="est_retirement_spending_input">estimated cost per month after retirement</label>
+            <p class="p_slider_value" id="est_retirement_spending_print">10000</p>
+            <input class="input_slider" type="range" min="1000" max="15000" step="100" value="4000" id="est_retirement_spending_input"
+                oninput="update_chart()">
+        </div>
+    </div>
+
+    <div id="preferenceModal" class="modal">
+        <div class="modal-content">
+            <h2>Retirement Calculator</h2>
+            <p class="modal-text">Hi, this is an interactive graphic to visulize your retirement. Change any of the values below to generate the
+                retirement curve that you're interested in. You can always change these settings later by clicking on the
+                settings icon on the top right corner of the chart.</p>
+
+            <div class="mini-container">
+                <label for="age_input">
+                    <span>starting age</span>
+                </label>
+                <input class="preference_input" type="number" value="24" id="age_input" onchange="update_chart()">
+
+                <label for="starting_wealth_input">
+                    <span>current amount saved</span>
+                </label>
+                <input class="preference_input" type="number" value="100000" id="starting_wealth_input" onchange="update_chart()">
+
+                <label for="est_interest_rate_input">
+                    <span>estimated yearly interest</span>
+                </label>
+                <input type="number" value="0.06" class="preference_input" id="est_interest_rate_input" required autocomplete="off" onchange="update_chart()"
+                />
+            </div>
+
+            <button id="modal_close_btn" class="modal_save">Save</button>
+        </div>
     </div>
 
     <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on the button, open the modal
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-        window.onload = function () {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-        Number.prototype.formatMoney = function () {
-            console.log("called format")
-            var n = this,
-                c = 2,
-                d = ".",
-                t = ",",
-                a = "$",
-                s = n < 0 ? "-" : "",
-                i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
-                j = (j = i.length) > 3 ? j % 3 : 0;
-            var final = s + a + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-            console.log("called format: " + n + " to: " + final)
-
-            return final
-        };
-
-
-
-
-        function calculate_life_worth(age, interest_rate, net_worth, est_retirement_spending, monthly_savings, retire_age, dying_age) {
-            var starting_year = (new Date()).getFullYear();
-            var current_year = starting_year;
-            var yearly_savings = monthly_savings * 12
-            var est_retirement_spending = est_retirement_spending * 12
-            var ages = [];
-            var years = [];
-            var worth = [];
-
-            while (age < retire_age) {
-                age += 1
-                current_year += 1
-                net_worth = net_worth + monthly_savings
-
-                net_worth *= (1 + interest_rate)
-
-                iteration = current_year - starting_year
-
-                ages.push(age)
-                worth.push(net_worth)
-                years.push(current_year)
-
-            }
-            while (age < dying_age) {
-                age += 1
-                current_year += 1
-                net_worth = net_worth - est_retirement_spending
-                if (net_worth > 0) {
-                    net_worth *= (1 + interest_rate)
-                }
-
-                iteration = current_year - starting_year
-
-                ages.push(age)
-                worth.push(net_worth)
-                years.push(current_year)
-
-            }
-
-            output_val = {
-                "y_data": worth,
-                "x_data": ages,
-                "y_label": "worth",
-                "x_label": "age"
-            }
-            return output_val
-        }
+        // Assign constant objects
+        var preferenceModal = document.getElementById('preferenceModal');
+        var close_btn = document.getElementById("modal_close_btn");
+        var settings_btn = document.getElementsByClassName("settings_btn")[0];
 
         var ctx = document.getElementById("myChart").getContext('2d');
-        var myChart = new Chart(ctx)
-
-        function create_new_chart(labels, data, colours) {
-            myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{ label: 'Net Worth', data: data, pointBackgroundColor: colours }]
-                },
-                options: {
-                    legend: { display: false },
-                    responsive: false,
-                    maintainAspectRatio: false,
-                    scales: {
-                        yAxes: [{
-                            ticks: { callback: function (value, index, values) { return value.toLocaleString("en-US", { style: "currency", currency: "USD" }); } },
-                            scaleLabel: { display: true, labelString: 'Net Worth' }
-                        }],
-                        xAxes: [{
-                            display: true,
-                            scaleLabel: { display: true, labelString: 'age' },
-                            ticks: {
-                                autoSkip: true,
-                                maxTicksLimit: 10,
-                                stepSize: 10
-                            }
-                        }]
-                    },
-                }
-            });
-        }
-
-
-        function chartStepOne() {
-            var myChart = document.getElementById("myLineChart")
-
-
-            generateLineChart()
-        }
 
         var monthly_savings_input = document.getElementById("monthly_savings_input");
         var retire_age_input = document.getElementById("retire_age_input");
@@ -272,47 +108,28 @@
         var est_interest_rate_input = document.getElementById("est_interest_rate_input");
         var starting_wealth_input = document.getElementById("starting_wealth_input");
 
+        var net_worth_peak_span = document.getElementById("net_worth_peak");
+        var after_life_worth_span = document.getElementById("after_life_worth");
+        var afterlife_savings_text_span = document.getElementById("afterlife_savings_text");
 
-        function update_chart() {
-            var age = parseFloat(age_input.value);
-            var interest_rate = parseFloat(est_interest_rate_input.value);
-            var net_worth = parseFloat(starting_wealth_input.value);
+        var myChart = new Chart(ctx)
 
-            dying_age_input.setAttribute("min", retire_age_input.value)
-            var dying_age = Math.max(dying_age_input.value, retire_age_input.value)
-            dying_age_input.value = dying_age
-
-            retire_age_input.setAttribute("min", age_input.value)
-            var retire_age = Math.max(age_input.value, retire_age_input.value)
-            retire_age_input.value = retire_age
-
-            var est_retirement_spending = parseFloat(est_retirement_spending_input.value);
-            var monthly_savings = parseFloat(monthly_savings_input.value);
-
-            est_retirement_spending_print.innerHTML = parseFloat(est_retirement_spending_input.value).toLocaleString("en-US", { style: "currency", currency: "USD" });
-            monthly_savings_print.innerHTML = parseFloat(monthly_savings_input.value).toLocaleString("en-US", { style: "currency", currency: "USD" });
-            retire_age_print.innerHTML = retire_age_input.value;
-            dying_age_print.innerHTML = dying_age_input.value;
-
-            var chart_vals = calculate_life_worth(age, interest_rate, net_worth, est_retirement_spending, monthly_savings, retire_age, dying_age)
-            var data = chart_vals["y_data"]
-            var labels = chart_vals["x_data"]
-            var colours = data.map((value) => value < 0 ? 'red' : 'green');
-
-
-
-            var currentWindowWidth = Math.min(window.innerWidth, 1000);
-            var currentWindowHeight = Math.min(window.innerHeight, 1000);
-
-            myChart.destroy()
-            create_new_chart(labels, data, colours)
-            ctx.width = currentWindowWidth;
-            ctx.height = currentWindowHeight;
-            myChart.resize()
+        // When the user clicks on the button, open the modal
+        settings_btn.onclick = function () {
+            preferenceModal.style.display = "block";
         }
-
-
-        update_chart()
+        close_btn.onclick = function () {
+            preferenceModal.style.display = "none";
+        }
+        window.onload = function () {
+            preferenceModal.style.display = "block";
+            update_chart()
+        }
+        window.onclick = function (event) {
+            if (event.target == preferenceModal) {
+                preferenceModal.style.display = "none";
+            }
+        }
     </script>
 </body>
 

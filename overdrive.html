@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search Overdrive</title>
+    <style>
+        body {
+            color: white;
+            background: #ffbd17;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0%;
+        }
+
+        #content {
+            background: #06c;
+            flex: 0 0 120px;
+        }
+
+        input {
+            padding: 10px;
+            outline: none;
+            border: none;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <input type="text" placeholder="enter search string here" id="input_search_str">
+        <button onclick="open_windows_with_query()">search</button>
+    </div>
+</body>
+
+<script>
+    // https://bpl.overdrive.com/search?query=test
+    var overdrive_urls = ["bpl.overdrive.com", "clamsnet.overdrive.com", "cwmars.overdrive.com", "mvlc.overdrive.com",
+        "minuteman.overdrive.com", "noble.overdrive.com", "ocln.overdrive.com", "sails.overdrive.com", "gatech.overdrive.com",
+        "gwinnett.overdrive.com", "aclibrary.overdrive.com"];
+
+    function create_urls(search_str) {
+        var query_urls = []
+        var search_str_clean = search_str.replace(" ", "+");
+        overdrive_urls.forEach(element => {
+            var query_url = "https://" + element + "/search?query=" + search_str_clean;
+            query_urls.push(query_url);
+        });
+
+        return query_urls;
+    }
+
+    function open_windows_with_query() {
+        var search_str = document.getElementById("input_search_str").value;
+
+        var query_urls = create_urls(search_str);
+        query_urls.forEach(element => {
+            window.open(element);
+        });
+    }
+
+</script>
+
+</html>

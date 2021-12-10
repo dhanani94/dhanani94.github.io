@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AMC Tabs</title>
+    <style>
+        body {
+            color: white;
+            background: #FAF566;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0%;
+        }
+
+        #content {
+            background: #9ACFDD;
+            flex: 0 0 120px;
+        }
+
+        input {
+            padding: 10px;
+            outline: none;
+            border: none;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #D90B1C;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <input type="number" placeholder="enter number of tabs here" id="input_number">
+        <button onclick="open_windows_with_query()">open</button>
+    </div>
+</body>
+
+<script>
+    var link = "https://us.coca-cola.com/amoe?promotionId=8417_amc_iw_63987"
+
+
+
+    function open_windows_with_query() {
+        var input_number = document.getElementById("input_number").value;
+        for (var i = 0; i < input_number; i++) {
+            window.open(link);
+        }
+    }
+
+</script>
+
+</html>
